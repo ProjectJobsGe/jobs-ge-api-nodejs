@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-let jobsSchema = new Schema({
+const { Schema } = mongoose;
+
+const jobsSchema = new Schema({
   jobsGeId: { type: Number, required: true },
   title: { type: String, required: true },
   publicationDate: { type: String, required: true },

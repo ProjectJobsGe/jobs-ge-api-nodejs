@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app",
     "dev": "nodemon app",
+    "eslint": "./node_modules/.bin/eslint ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +25,9 @@
     "mongoose": "^5.4.3"
   },
   "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "nodemon": "^1.18.9"
   }
 }
