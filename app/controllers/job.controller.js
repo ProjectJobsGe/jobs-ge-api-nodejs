@@ -1,5 +1,6 @@
 const Job = require('../models/job.model');
 
+// post request
 exports.addJob = (req, res, next) => {
   const job = new Job({
     jobsGeId: req.body.jobsGeId,
@@ -20,3 +21,15 @@ exports.addJob = (req, res, next) => {
     res.send('Job added');
   });
 };
+
+// Get request
+exports.getJob = (req, res, next) => {
+  const { id } = req.params;
+  if (!id) return next(new Error('Must provide id'));
+
+  Job.findById(id, (err, job) => {
+    if (err) return next(err);
+
+    res.json(job);
+  })
+}

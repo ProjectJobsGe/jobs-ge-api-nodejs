@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app",
-    "dev": "nodemon app",
+    "start": "node app/server.js",
+    "dev": "nodemon app/server.js",
     "eslint": "./node_modules/.bin/eslint ./",
     "test": "node_modules/.bin/jest"
   },
@@ -29,6 +29,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "jest": "^23.6.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "supertest": "^3.3.0"
   }
 }
