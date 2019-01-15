@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 const Job = require('../models/job.model');
 
 // post request
@@ -14,7 +15,6 @@ exports.addJob = (req, res, next) => {
     text: req.body.text,
   });
 
-  // eslint-disable-next-line consistent-return
   job.save((err) => {
     if (err) return next(err);
 
@@ -31,5 +31,5 @@ exports.getJob = (req, res, next) => {
     if (err) return next(err);
 
     res.json(job);
-  })
-}
+  });
+};

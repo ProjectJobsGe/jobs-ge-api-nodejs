@@ -11,14 +11,14 @@ exports.connect = (dbUrl = mongoDB) => {
   db.on('error', console.error.bind(console, 'MongoDB connection error:'));
   db.on('disconnected', () => console.log('db connection is disconnected'));
 
-  const gracefulExit = () => { 
+  const gracefulExit = () => {
     mongoose.connection.close(() => {
-      console.log('Mongoose default connection with DB :' + dbUrl + ' is disconnected through app termination');
+      console.log(`Mongoose default connection with DB :${dbUrl} is disconnected through app termination`);
       process.exit(0);
     });
-  }
+  };
 
   process.on('SIGINT', gracefulExit).on('SIGTERM', gracefulExit);
-}
+};
 
 exports.disconnect = () => mongoose.disconnect();
